@@ -73,14 +73,14 @@ endmodule
 
 DOWNCOUNTER:
 
-module downcon(clk,A);
+module downc(clk,A);
 input clk;
 output reg[0:3]A;
 always@(posedge clk)
 begin
-	A[0]=((((~A[1])&(~A[2]))&A[3])^A[0]);
-	A[1]=(((A[2])&(A[3]))^A[1]);
-	A[2]=((A[3])^A[2]);
+	A[0]=((((~A[1])&(~A[2]))&(~A[3]))^A[0]);
+	A[1]=(((~A[2])&(~A[3]))^A[1]);
+	A[2]=((~A[3])^A[2]);
 	A[3]=1^A[3];
 end
 endmodule
@@ -94,7 +94,7 @@ endmodule
 ## UP COUNTER
 ![exp-7-synchornous-counters-](upconwave.png)
 ## DOWN COUNTER
-![exp-7-synchornous-counters-](downconwave.png)
+![exp-7-synchornous-counters-](downwave.png)
 # TRUTH TABLE 
 ## UP COUNTER
 ![exp-7-synchornous-counters-](uptable.png)
