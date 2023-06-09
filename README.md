@@ -73,7 +73,7 @@ endmodule
 
 DOWNCOUNTER:
 
-module downcon(clk,A);
+module downc(clk,A);
 input clk;
 output reg[0:3]A;
 always@(posedge clk)
